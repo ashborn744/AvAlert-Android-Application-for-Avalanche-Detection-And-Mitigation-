@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:orientation="vertical"
+    android:background="@color/background_clr">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/transparent"
+        android:elevation="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Custom Back Arrow -->
+
+
+        <!-- Centered Title -->
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="TITLE"
+            android:textColor="@color/dark_text_color"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+
+
+
+    <ImageView
+        android:id="@+id/bg_image"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:adjustViewBounds="true"
+        android:elevation="0dp"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="H,3:4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/main_background_img" />
+
+    <LinearLayout
+
+        android:id="@+id/searchBarLayout"
+        android:layout_width="320dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="250dp"
+        android:background="@drawable/search_bar_background"
+        android:elevation="30dp"
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+
+
+        app:layout_constraintBottom_toBottomOf="@+id/bg_image"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar"
+        app:layout_constraintVertical_bias="0.135">
+
+
+        <!-- Search Bar -->
+
+        <!-- Cross Button -->
+
+        <EditText
+            android:id="@+id/searchBar"
+            android:layout_width="0dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:backgroundTint="#0000FFD9"
+            android:backgroundTintMode="src_in"
+            android:hint="Search"
+            android:imeOptions="actionSearch"
+            android:inputType="text"
+            android:paddingStart="25dp"
+            android:paddingTop="10dp"
+            android:paddingEnd="16dp"
+            android:paddingBottom="10dp"
+            android:textColor="#000000"
+            android:textColorHint="#808080"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toStartOf="@id/searchIcon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/closeBtn"
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="5dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="close"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/cross"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toStartOf="@id/searchIcon"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <!-- Search Icon -->
+        <ImageButton
+            android:id="@+id/searchIcon"
+
+            android:layout_width="50dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="center_vertical"
+            android:layout_marginEnd="15dp"
+            android:background="?android:attr/selectableItemBackground"
+            android:contentDescription="Search"
+            android:padding="10dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/search"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </LinearLayout>
+
+    <androidx.cardview.widget.CardView
+        android:elevation="20dp"
+        android:id="@+id/cardView2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="50dp"
+        app:cardCornerRadius="50dp"
+        android:background="@drawable/top_round_corner"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.7"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/searchBarLayout"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/statistic_bg_gradient"
+            android:orientation="vertical">
+
+            <GridLayout
+                android:layout_width="match_parent"
+                android:layout_height="220dp"
+                android:columnCount="2"
+                android:rowCount="1">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/btn_Statistics"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_row="0"
+                    android:elevation="10dp"
+
+                    android:layout_column="0"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="center"
+                    app:cardCornerRadius="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/card_gradient_180"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <ImageView
+
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+
+                            app:srcCompat="@drawable/statistics_img" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
+                            android:text="Statistics"
+                            android:textColor="@color/dark_text_color"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+                <androidx.cardview.widget.CardView
+                    android:elevation="10dp"
+                    android:id="@+id/btn_alerts"
+                    android:layout_width="120dp"
+                    android:layout_height="120dp"
+                    android:layout_row="0"
+                    android:layout_column="1"
+                    android:layout_columnWeight="1"
+                    android:layout_gravity="center"
+                    app:cardCornerRadius="20dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:background="@drawable/card_gradient_180"
+                        android:orientation="vertical"
+                        android:padding="20dp">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_gravity="center"
+                            android:paddingLeft="4dp"
+
+                            app:srcCompat="@drawable/alerts_image" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:layout_marginTop="10dp"
+                            android:gravity="center"
+                            android:text="Alerts"
+                            android:textColor="@color/dark_text_color"
+                            android:textSize="18sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </androidx.cardview.widget.CardView>
+
+
+            </GridLayout>
+
+            <androidx.cardview.widget.CardView
+                android:elevation="10dp"
+                android:id="@+id/btn_ImagePrediction"
+                android:layout_width="match_parent"
+                android:layout_height="80dp"
+                android:layout_row="0"
+                android:layout_column="1"
+                android:layout_columnWeight="1"
+                android:layout_gravity="center"
+                android:layout_marginLeft="40dp"
+                android:layout_marginRight="40dp"
+                app:cardCornerRadius="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/card_gradient_180"
+                    android:orientation="horizontal"
+                    android:padding="15dp">
+
+                    <ImageView
+
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="10dp"
+
+                        app:srcCompat="@drawable/image_prediction" />
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:gravity="center"
+                        android:text="Image Prediction"
+                        android:textColor="@color/dark_text_color"
+                        android:textSize="18sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ImagePrediction"
+    android:orientation="vertical"
+    android:background="@color/background_clr">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="56dp"
+        android:layout_alignParentTop="true"
+        android:background="@android:color/transparent"
+        android:elevation="0dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Custom Back Arrow -->
+        <ImageButton
+            android:id="@+id/back_arrow"
+            android:paddingLeft="15dp"
+            android:paddingBottom="14dp"
+            android:paddingTop="14dp"
+            android:layout_width="50dp"
+            android:background="#00FFFFFF"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            android:layout_marginStart="0dp"
+            android:src="@drawable/baseline_arrow_back_ios_24"
+            android:contentDescription="Back to previous screen"/>
+
+        <!-- Centered Title -->
+        <TextView
+            android:id="@+id/toolbar_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="TITLE"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+    </androidx.appcompat.widget.Toolbar>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/image_bg"
+        android:layout_width="match_parent"
+        android:layout_height="300dp"
+        android:layout_margin="20dp"
+        android:elevation="10dp"
+        app:cardCornerRadius="30dp"
+        app:cardUseCompatPadding="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/toolbar">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/statistic_bg_gradient">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:elevation="9dp"
+                android:text="Please Select An Image"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.498"
+                app:layout_constraintStart_toStartOf="parent"
+                android:textSize="15sp"
+                android:textColor="@color/dark_text_color"
+                app:layout_constraintTop_toTopOf="parent"
+                 />
+
+            <ImageView
+                android:id="@+id/displayImage"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="fitCenter"
+                android:elevation="10dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+    <GridLayout
+        android:id="@+id/grid"
+        android:layout_width="match_parent"
+        android:layout_height="180dp"
+        android:columnCount="2"
+        android:rowCount="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_bg">
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/selectImg"
+
+            android:layout_width="150dp"
+            android:layout_height="120dp"
+            android:layout_row="0"
+            android:layout_column="0"
+
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:elevation="10dp"
+            app:cardCornerRadius="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/card_gradient_180"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <ImageView
+
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+
+                    app:srcCompat="@drawable/select_image" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="Select Image"
+                    android:textColor="@color/dark_text_color"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/predict"
+
+            android:layout_width="140dp"
+            android:layout_height="120dp"
+            android:layout_row="0"
+            android:layout_column="1"
+            android:layout_columnWeight="1"
+            android:layout_gravity="center"
+            android:elevation="10dp"
+            app:cardCornerRadius="20dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:background="@drawable/card_gradient_180"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <ImageView
+                    android:layout_width="40dp"
+                    android:layout_height="40dp"
+                    android:layout_gravity="center"
+                    android:paddingLeft="4dp"
+
+                    app:srcCompat="@drawable/predict" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:gravity="center"
+                    android:text="Predict"
+                    android:textColor="@color/dark_text_color"
+                    android:textSize="18sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+
+
+    </GridLayout>
+
+    <androidx.cardview.widget.CardView
+        android:elevation="20dp"
+        android:id="@+id/bottomcard"
+        android:layout_width="match_parent"
+        android:layout_height="800dp"
+        app:cardElevation="30dp"
+
+        app:cardCornerRadius="200dp"
+        android:background="@drawable/top_round_corner"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.5"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/grid"
+        app:layout_constraintVertical_bias="0.0">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@drawable/card_gradient_135"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:elevation="20dp"
+                android:id="@+id/Predicted_img"
+                android:layout_width="match_parent"
+                android:layout_marginTop="50dp"
+                android:layout_height="70dp"
+                app:srcCompat="@drawable/danger_placeholder" />
+
+            <TextView
+                android:elevation="20dp"
+                android:id="@+id/Predicted_txt"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nothing Yet!"
+                android:textAlignment="center"
+                android:textSize="20dp"
+                android:layout_marginTop="20dp"
+                android:textColor="@color/dark_text_color"/>
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
